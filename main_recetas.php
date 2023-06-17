@@ -28,11 +28,12 @@
             <h3 class="text-center text-secondary">Registro de Recetas</h3>
             <?php
 
-            include "controlador/registro_pacientes.php"
+            include "controlador/registro_recetas.php"
                 ?>
             <div class="mb-3">
                 <label for="exampleDataList" class="form-label">Seleccionar Paciente</label>
-                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                <input class="form-control" list="datalistOptions" id="exampleDataList" name="id_paciente"
+                    placeholder="Type to search...">
                 <datalist id="datalistOptions">
                     <option value="San Francisco">
                     <option value="New York">
@@ -45,10 +46,10 @@
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Receta</label>
-                <textarea class="form-control" id="receta" rows="3"></textarea>
+                <textarea class="form-control" name="texto_receta" rows="3"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" name="btn-registrar" value="ok">Agregar Receta</button>
+            <button type="submit" class="btn btn-primary" name="btn-registrar-receta" value="ok">Agregar Receta</button>
         </form>
         <div class="col-8 p-4">
             <table class="table">
