@@ -25,39 +25,38 @@
         ?>
     <div class="container-fluid row">
         <form class="col-4 p-3" method="POST">
-            <h3 class="text-center text-secondary">Registro de Pacientes</h3>
+            <h3 class="text-center text-secondary">Registro de Recetas</h3>
             <?php
 
             include "controlador/registro_pacientes.php"
                 ?>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Nombre del paciente</label>
-                <input type="text" class="form-control" name="nombre">
+                <label for="exampleDataList" class="form-label">Seleccionar Paciente</label>
+                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                <datalist id="datalistOptions">
+                    <option value="San Francisco">
+                    <option value="New York">
+                    <option value="Seattle">
+                    <option value="Los Angeles">
+                    <option value="Chicago">
+                </datalist>
+                <!-- <label for="exampleInputEmail1" class="form-label">Seleccionar Paciente</label>
+                <input type="text" class="form-control" name="nombre"> -->
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Apellido del paciente</label>
-                <input type="text" class="form-control" name="apellido">
+                <label for="exampleFormControlTextarea1" class="form-label">Receta</label>
+                <textarea class="form-control" id="receta" rows="3"></textarea>
             </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Numero</label>
-                <input type="text" class="form-control" name="numerop">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Fecha de nacimiento</label>
-                <input type="text" class="form-control" name="fechan">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Correo</label>
-                <input type="text" class="form-control" name="correo">
-            </div>
-            <button type="submit" class="btn btn-primary" name="btn-registrar" value="ok">Registrar</button>
+
+            <button type="submit" class="btn btn-primary" name="btn-registrar" value="ok">Agregar Receta</button>
         </form>
         <div class="col-8 p-4">
             <table class="table">
                 <thead class="bg=info">
                     <tr>
                         <th scope="col">ID RECETA</th>
-                        <th scope="col">ID PACIENTE</th>
+                        <th scope="col">PACIENTE</th>
+                        <th scope="col"></th>
                         <th scope="col">FECHA GENERADA</th>
                         <th scope="col"></th>
                     </tr>
@@ -65,14 +64,18 @@
                 <tbody>
                     <?php
                     include "modelo/conexion.php";
-                    $sql = $conexion->query("select * from recetas ");
+                    //$sql = $conexion->query("SELECT * from recetas ");
+                    $sql = $conexion->query("SELECT * from recetas r INNER JOIN pacientes p ON r.ID_PACIENTE=p.ID ");
                     while ($datos = $sql->fetch_object()) { ?>
                         <tr>
                             <td>
                                 <?= $datos->ID_RECETA ?>
                             </td>
                             <td>
-                                <?= $datos->ID_PACIENTE ?>
+                                <?= $datos->NOMBRE ?>
+                            </td>
+                            <td>
+                                <?= $datos->APELLIDO ?>
                             </td>
                             <td>
                                 <?= $datos->FECHA_GENERADA ?>
