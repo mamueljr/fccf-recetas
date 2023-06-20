@@ -33,34 +33,23 @@
             <div class="mb-3">
                 <label for="exampleDataList" class="form-label">Seleccionar Paciente</label>
                 <input class="form-control" list="datalistOptions" id="exampleDataList" name="id_paciente"
-                    placeholder="Type to search...">
+                    placeholder="Escribe para buscar por nombre...">
                 <datalist id="datalistOptions">
                     <?php
                     include "modelo/conexion.php";
-                    /* $getPacientes = "select * from pacientes order by ID";
-                    $getPacientes2 = mysql_query($getPacientes); */
+
                     $getPacientes = $conexion->query("SELECT * from pacientes p INNER JOIN recetas r ON p.ID=r.ID_PACIENTE");
-                    //$sql = $conexion->query("SELECT * from recetas r INNER JOIN pacientes p ON r.ID_PACIENTE=p.ID ");
+
                     while ($datos_pacientes = $getPacientes->fetch_object()) { ?>
                         <option value="<?= $datos_pacientes->NOMBRE ?>"></option>
                         <?php
                     } ?>
-
-
-                    <!-- <option value="San Francisco">
-                    <option value="New York">
-                    <option value="Seattle">
-                    <option value="Los Angeles">
-                    <option value="Chicago"> -->
                 </datalist>
-                <!-- <label for="exampleInputEmail1" class="form-label">Seleccionar Paciente</label>
-                <input type="text" class="form-control" name="nombre"> -->
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Receta</label>
                 <textarea class="form-control" name="texto_receta" rows="3"></textarea>
             </div>
-
             <button type="submit" class="btn btn-primary" name="btn-registrar-receta" value="ok">Agregar Receta</button>
         </form>
         <div class="col-8 p-4">
