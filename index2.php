@@ -36,7 +36,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">NOMBRES</th>
                         <th scope="col">APELLIDOS</th>
-                        <th scope="col">NUMERO P</th>
+                        <th scope="col">NUMERO PENSIONES</th>
                         <th scope="col">FECHA DE NACIMIENTO</th>
                         <th scope="col">CORREO</th>
                         <th scope="col"></th>
@@ -67,10 +67,10 @@
                                 <?= $datos->CORREO ?>
                             </td>
                             <td>
-                                <a href="modificar_paciente.php?id=<?= $datos->ID ?>" class="btn btn-small btn-warning"><i
-                                        class="fa-solid fa-pen-to-square"></i></a>
-                                <a onclick="return eliminar()" href="index.php?id=<?= $datos->ID ?>"
-                                    class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                <a href="agrega_receta.php?id=<?= $datos->ID ?>" class="btn btn-small btn-success"><i
+                                        class="fa-solid fa-circle-plus"></i></a>
+                                <!-- <a onclick="return eliminar()" href="index.php?id=<?= $datos->ID ?>"
+                                    class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a> -->
                             </td>
                         </tr>
                     <?php }

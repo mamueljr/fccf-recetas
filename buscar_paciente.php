@@ -38,7 +38,7 @@
 
         </div>
     </main>
-    <script>src = "./modelo/script.js"</script>
+    <script>src = "/modelo/script.js"</script>
 </body>
 
 
