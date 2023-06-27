@@ -18,8 +18,8 @@ $sql = $conexion->query(" select * from recetas where ID_PACIENTE=$id ");
 
 <body>
     <form class="col-4 p-3 m-auto" method="POST">
-        <h3 class="text-center alert alert-secondary">Modificar Pacientes</h3>
-        <input type="hidden" name="id" value="<?= $_GET["id"] ?>">
+        <h3 class="text-center alert alert-secondary">Imprimir receta</h3>
+        <input type="hidden" name="id_receta" value="<?= $_GET["id"] ?>">
         <?php
 
         while ($datosr = $sql->fetch_object()) { ?>

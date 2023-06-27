@@ -12,7 +12,7 @@ if (!empty($_POST["btn-registrar-receta"])) {
  */
         $sql = $conexion->query(" insert into recetas (ID_PACIENTE,TEXTO_RECETA) values ('$id_paciente','$texto_receta') ");
         if ($sql == 1) {
-            header("location:index.php");
+            header("location:index2.php");
         } else {
             echo '<div class="alert alert-danger"> Error al registrar</div>';
         }

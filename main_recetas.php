@@ -23,40 +23,13 @@
     include "modelo/conexion.php";
     include "controlador/eliminar_receta.php"
         ?>
-    <div class="container-fluid row">
-        <form class="col-4 p-3" method="POST">
-            <h3 class="text-center text-secondary">Registro de Recetas</h3>
-            <?php
+    <div class="row justify-content-md-center">
 
-            include "controlador/registro_recetas.php"
-                ?>
-            <div class="mb-3">
-                <label for="exampleDataList" class="form-label">Seleccionar Paciente</label>
-                <input class="form-control" list="datalistOptions" id="exampleDataList" name="id_paciente"
-                    placeholder="Escribe para buscar por nombre...">
-                <datalist id="datalistOptions">
-                    <?php
-                    include "modelo/conexion.php";
-
-                    $getPacientes = $conexion->query("SELECT * from pacientes p INNER JOIN recetas r ON p.ID=r.ID_PACIENTE");
-
-                    while ($datos_pacientes = $getPacientes->fetch_object()) { ?>
-                        <option value="<?= $datos_pacientes->NOMBRE ?>"></option>
-                        <?php
-                    } ?>
-                </datalist>
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Receta</label>
-                <textarea class="form-control" name="texto_receta" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" name="btn-registrar-receta" value="ok">Agregar Receta</button>
-        </form>
         <div class="col-8 p-4">
             <table class="table">
                 <thead class="bg=info">
                     <tr>
-                        <th scope="col">ID RECETA</th>
+                        <th scope="col"># RECETA</th>
                         <th scope="col">PACIENTE</th>
                         <th scope="col"></th>
                         <th scope="col">FECHA GENERADA</th>
@@ -83,8 +56,8 @@
                                 <?= $datos->FECHA_GENERADA ?>
                             </td>
                             <td>
-                                <a href="modificar_receta.php?id=<?= $datos->ID ?>" class="btn btn-small btn-warning"><i
-                                        class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="modificar_receta_view.php?id=<?= $datos->ID_RECETA ?>"
+                                    class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                                 <a onclick="return eliminar()" href="main_recetas.php?id=<?= $datos->ID_RECETA ?>"
                                     class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                             </td>

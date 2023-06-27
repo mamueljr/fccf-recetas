@@ -27,7 +27,7 @@
     include "modelo/conexion.php";
     include "controlador/eliminar_paciente.php"
         ?>
-    <div class="container-center row">
+    <div class="container-fluid row">
 
         <div class="col-8 p-4">
             <table class="table">
