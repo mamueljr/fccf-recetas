@@ -42,7 +42,7 @@ CREATE TABLE `pacientes` (
 
 INSERT INTO `pacientes` (`ID`, `NOMBRE`, `APELLIDO`, `NUMERO_P`, `FECHA_NAC`, `CORREO`) VALUES
 (1, 'Emmanuel', 'Rojas', '98502', '1981-11-20', 'mamueljr@gmail.com'),
-(4, 'prueba', 'prueba', 'prueba', 'prueba', 'prueba');
+(2, 'prueba', 'prueba', 'prueba', 'prueba', 'prueba');
 
 -- --------------------------------------------------------
 
