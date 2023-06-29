@@ -63,7 +63,15 @@
             <button type="submit" class="btn btn-primary" name="btn-registrar" value="ok">Registrar</button>
         </form>
         <div class="col-8 p-4">
+
             <h3 class="text-center text-secondary">Listado de Pacientes</h3>
+            <div class="container-fluid">
+                <form class="d-flex">
+                    <form action="" method="GET">
+                        <input type="search" class="form-control me-2" placeholder="Buscar paciente..."><br>
+                        <button type="submit" class="btn btn-outline-info" name="enviar"><b>Buscar</b> </button>
+                    </form>
+            </div>
             <table class="table">
                 <thead class="bg=info">
                     <tr>
