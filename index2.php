@@ -16,18 +16,19 @@
 </head>
 
 <body>
+    <?php include('header.php'); ?>
     <script>
         function eliminar() {
             var respuesta = confirm("Estas seguro que deseas eliminar?");
             return respuesta
         }
     </script>
-    <h1 class="text-center p-3">Pacientes Fisioterapia FCCF UACH</h1>
+    <h3 class="text-center p-3">Pacientes Fisioterapia FCCF UACH</h3>
     <?php
     include "modelo/conexion.php";
     include "controlador/eliminar_paciente.php"
         ?>
-    <div class="container-fluid row">
+    <div class="justify-content-md-center row">
 
         <div class="col-8 p-4">
             <table class="table">
@@ -39,7 +40,7 @@
                         <th scope="col">NUMERO PENSIONES</th>
                         <th scope="col">FECHA DE NACIMIENTO</th>
                         <th scope="col">CORREO</th>
-                        <th scope="col"></th>
+                        <th scope="col">AGREGAR RECETA</th>
                     </tr>
                 </thead>
                 <tbody>

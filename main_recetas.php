@@ -12,13 +12,14 @@
 </head>
 
 <body>
+    <?php include('header.php'); ?>
     <script>
         function eliminar() {
             var respuesta = confirm("Estas seguro que deseas eliminar?");
             return respuesta
         }
     </script>
-    <h1 class="text-center p-3">Recetas Fisioterapia FCCF UACH</h1>
+    <h3 class="text-center p-3">Lista Recetas Fisioterapia FCCF UACH</h3>
     <?php
     include "modelo/conexion.php";
     include "controlador/eliminar_receta.php"

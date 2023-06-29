@@ -15,50 +15,7 @@
 
 <body>
 
-    <!-- Inicia Nav -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Fisioterapia FCCF</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li> -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Menu
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Alta de Pacientes</a></li>
-                            <li><a class="dropdown-item" href="#">Lista de Pacientes</a></li>
-                            <li><a class="dropdown-item" href="#">Lista de Recetas</a></li>
-                            <!-- <li><a class="dropdown-item" href="#">Lista de Pacientes</a></li> -->
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <!-- <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form> -->
-            </div>
-        </div>
-    </nav>
+    <?php include('header.php'); ?>
 
 
     <!-- Termina Nav -->
@@ -106,10 +63,11 @@
             <button type="submit" class="btn btn-primary" name="btn-registrar" value="ok">Registrar</button>
         </form>
         <div class="col-8 p-4">
+            <h3 class="text-center text-secondary">Listado de Pacientes</h3>
             <table class="table">
                 <thead class="bg=info">
                     <tr>
-                        <th scope="col">ID</th>
+                        <th scope="col" style="visibility:collapse; display:none;">ID</th>
                         <th scope="col">NOMBRES</th>
                         <th scope="col">APELLIDOS</th>
                         <th scope="col">NUMERO P</th>
@@ -124,7 +82,7 @@
                     $sql = $conexion->query("select * from pacientes ");
                     while ($datos = $sql->fetch_object()) { ?>
                         <tr>
-                            <td>
+                            <td style="visibility:collapse; display:none;">
                                 <?= $datos->ID ?>
                             </td>
                             <td>
@@ -157,6 +115,9 @@
             </table>
         </div>
     </div>
+    <!--footer-->
+    <?php include('footer.php'); ?>
+
     <!-- Javascript Bundel Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

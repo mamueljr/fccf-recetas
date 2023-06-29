@@ -20,6 +20,7 @@ $sql = $conexion->query(" select * from pacientes where ID=$id ");
 </head>
 
 <body>
+    <?php include('header.php'); ?>
     <form class="col-4 p-3 m-auto" method="POST">
         <h3 class="text-center alert alert-secondary">Receta</h3>
         <input type="hidden" name="id" value="<?= $_GET["id"] ?>">
