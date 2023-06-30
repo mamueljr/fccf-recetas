@@ -72,6 +72,18 @@
                         <button type="submit" class="btn btn-outline-info" name="enviar"><b>Buscar</b> </button>
                     </form>
             </div>
+            <?php
+            include "/modelo/conexion.php";
+            $where = "";
+            if (isset($_GET['enviar'])) {
+                $busqueda = $_GET['busqueda'];
+                if (isset($_GET['busqueda'])) {
+                    $where = "WHERE pacientes.NOMBRE LIKE '%" . $busqueda . "%' OR nombre LIKE '%" . $busqueda . "%' OR APELLIDO LIKE '%" . $busqueda . "%'";
+                }
+            }
+
+            ?>
+
             <table class="table">
                 <thead class="bg=info">
                     <tr>
