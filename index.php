@@ -30,9 +30,9 @@
 
 
     <?php
-    include "modelo/conexion.php";
-    include "controlador/eliminar_paciente.php"
-        ?>
+    //include "modelo/conexion.php";
+    //include "controlador/eliminar_paciente.php";
+    ?>
     <div class="container-fluid row">
         <form class="col-4 p-3" method="POST">
             <h3 class="text-center text-secondary">Registro de Pacientes</h3>
@@ -73,7 +73,7 @@
                     </form>
             </div>
             <?php
-            include "/modelo/conexion.php";
+            include '/modelo/database.php';
             $where = "";
             if (isset($_GET['enviar'])) {
                 $busqueda = $_GET['busqueda'];
