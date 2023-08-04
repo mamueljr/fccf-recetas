@@ -31,7 +31,7 @@
 
     <?php
     include "modelo/conexion.php";
-    //include "controlador/eliminar_paciente.php";
+    include "controlador/eliminar_paciente.php";
     ?>
     <div class="container-fluid row">
         <form class="col-4 p-3" method="POST">
