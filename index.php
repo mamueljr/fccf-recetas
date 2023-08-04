@@ -30,7 +30,7 @@
 
 
     <?php
-    //include "modelo/conexion.php";
+    include "modelo/conexion.php";
     //include "controlador/eliminar_paciente.php";
     ?>
     <div class="container-fluid row">
