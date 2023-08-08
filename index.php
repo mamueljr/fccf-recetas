@@ -78,7 +78,7 @@
             if (isset($_GET['enviar'])) {
                 $busqueda = $_GET['busqueda'];
                 if (isset($_GET['busqueda'])) {
-                    $where = "WHERE pacientes.NOMBRE LIKE '%" . $busqueda . "%' OR nombre LIKE '%" . $busqueda . "%' OR APELLIDO LIKE '%" . $busqueda . "%'";
+                    $where = "WHERE pacientes.NOMBRE LIKE '%" . $busqueda . "%' OR NOMBRE LIKE '%" . $busqueda . "%' OR APELLIDO LIKE '%" . $busqueda . "%'";
                 }
             }
 
